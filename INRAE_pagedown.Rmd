@@ -92,7 +92,6 @@ df <- data.frame(
   weight=round(c(rnorm(200, mean=55, sd=5),
                  rnorm(200, mean=65, sd=5)))
   )
-head(df)
 
 # On trace un ggplot
 ggplot(df, aes(x=weight))+
