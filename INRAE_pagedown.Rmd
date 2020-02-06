@@ -1,0 +1,103 @@
+---
+title: "Modèle Pagedown pour INRAE"
+subtitle: "Ce document a été généré par la librairie {pagedown}"
+author: "David CARAYON"
+date: "Février 2020"
+output: 
+  pagedown::html_paged:
+    css: 
+    - "style/inrae.css"
+    - "style/custom-page_inrae.css"
+knit: pagedown::chrome_print
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	dpi = 300,
+	out.width = 2100
+)
+```
+
+```{r packages}
+library(tidyverse)
+library(gt)
+```
+
+```{r theme}
+source("R/theme_inrae.R")
+```
+
+>
+> # ABSTRACT
+>
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+>
+
+# Premier chapitre
+
+## Première section
+
+Ce travail s'appuie sur le template bénévolement produit par Thomas Vroylandt pour les scouts de france et mis à disposition de la communauté [https://github.com/tvroylandt/sgdf_pagedown](https://github.com/tvroylandt/sgdf_pagedown)
+
+### Une sous-section
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+## Seconde section
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+```{r plot}
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(aes(color = as.factor(gear)))+
+  scale_color_inrae()+
+  geom_smooth(color = cols_inrae[1]) +
+  labs(x = "Puissance du processeur", y = "Nombre de rotations par minutes (RPM)", title = "Représentation graphique", subtitle = "De la rotation par minute en fonction du processeur") +
+  theme_inrae()
+
+```
+
+# Second chapitre
+
+## Première section
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+```{r gt}
+iris %>% 
+  filter(Species == "setosa") %>% 
+  head(10) %>% 
+  gt()
+```
+
+## Seconde section
+
+Avec insertion de code :
+
+```{r echo = TRUE}
+
+# On charge un package
+library(devtools)
+
+# Création de données fictives
+df <- data.frame(
+  sex=factor(rep(c("F", "M"), each=200)),
+  weight=round(c(rnorm(200, mean=55, sd=5),
+                 rnorm(200, mean=65, sd=5)))
+  )
+head(df)
+
+# On trace un ggplot
+ggplot(df, aes(x=weight))+
+  geom_histogram(color="darkblue", fill="lightblue") +
+  theme_inrae()
+
+```
+

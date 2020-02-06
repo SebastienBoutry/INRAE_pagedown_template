@@ -1,0 +1,52 @@
+
+/* paragaphe et liste */
+p, ul {
+  color: ##275662;
+  font-family: "Avenir Next Pro";
+  text-align: justify;
+}
+
+/* titres */
+h1, h2, h3, h4 {
+  color: #00a3a6;
+  font-family: "Raleway";
+  font-weight: bold;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+/* tableaux - avec gt */
+/* titres */
+th {
+  background-color: #00a3a6 !important;
+  color: #FFFFFF !important;
+  font-family: "Raleway" !important;
+  font-weight: bold !important;
+}
+
+/* colonnes de group */
+.gt_group_heading {
+  color: #00a3a6 !important;
+  font-family: "Avenir Next Pro" !important;
+  font-weight: bold !important;
+}
+
+/* contenu */
+td {
+  color: ##275662;
+  font-family: "Avenir Next Pro";
+}
+
+/* eviter les tableaux multipages */
+.gt_table{
+  break-inside: avoid;
+}
+
+/* numerotation pages */
+.pagedjs_margin-content{
+  color: #275662;
+  font-family: "Avenir Next Pro";
+  font-weight: bold;
+}
