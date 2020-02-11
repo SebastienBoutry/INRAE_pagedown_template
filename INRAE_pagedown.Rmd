@@ -96,7 +96,7 @@ df <- data.frame(
 # On trace un ggplot
 ggplot(df, aes(x=weight))+
   geom_histogram(color="darkblue", fill="lightblue") +
-  theme_inrae()
+  theme_inrae_1()
 
 ```
 
